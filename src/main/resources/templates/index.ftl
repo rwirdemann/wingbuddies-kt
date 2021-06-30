@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="entries" type="kotlin.collections.List<com.jetbrains.handson.website.BlogEntry>" -->
+<#-- @ftlvariable name="entries" type="kotlin.collections.List<com.jetbrains.handson.website.Session>" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +26,7 @@
         <div class="columns">
             <div class="column">
                 <#list entries as item>
-                    <article class="media notification is-info">
+                    <article class="media notification">
                         <figure class="media-left">
                             <span class="icon is-medium">
                                 <i class="fab fa-2x fa-css3-alt"></i>
@@ -34,8 +34,8 @@
                         </figure>
                         <div class="media-content">
                             <div class="content">
-                                <h3 class="subtitle">${item.headline}</h3>
-                                <p>${item.body}</p>
+                                <h3 class="subtitle">${item.wann}, ${item.spot}</h3>
+                                <p>Surfer: ${item.surfer}</p>
                             </div>
                         </div>
                     </article>
@@ -48,15 +48,15 @@
                     </p>
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" name="headline" placeholder="Wo gehts hin?">
+                            <input class="input" type="text" name="headline" placeholder="Wo gehts hin?" required>
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                            <textarea class="textarea" name="body" placeholder="Body"></textarea>
+                            <input class="input" name="when" type="date">
                         </div>
                     </div>
-                    <input class="button" type="submit">
+                    <input class="button" type="submit" value="Einstellen">
                 </form>
             </div>
         </div>
