@@ -26,7 +26,7 @@
         <div class="columns">
             <div class="column">
                 <#list entries as item>
-                    <article class="media notification">
+                    <article class="media notification is-info">
                         <figure class="media-left">
                             <span class="icon is-medium">
                                 <i class="fab fa-2x fa-css3-alt"></i>

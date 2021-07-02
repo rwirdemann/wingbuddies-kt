@@ -11,6 +11,8 @@ import io.ktor.http.content.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
@@ -27,9 +29,13 @@ fun Application.module() {
         }
         post("/submit") {
             val params = call.receiveParameters()
-            val headline = params["headline"] ?: return@post call.respond(HttpStatusCode.BadGateway)
+            val headline = params["headline"] ?: return@post call.respond(HttpStatusCode.BadRequest)
+            val text = params["when"]?: return@post call.respond(HttpStatusCode.BadRequest)
+            var date = LocalDate.parse(text)
+            var formatter = DateTimeFormatter.ofPattern("EEEE, dd. MMMM YYYY")
+            var formattedDate = date.format(formatter)
             val surfers = "Astrid, Ralf, Kalle, ..."
-            val newEntry = Session(headline, surfers, "27. Juli 2021")
+            val newEntry = Session(headline, surfers, formattedDate)
             blogEntries.add(0, newEntry)
             call.respondRedirect("/")
         }

@@ -6,11 +6,11 @@ val blogEntries = mutableListOf(
     Session(
         "Heiligenhafen",
         "Astrid, Kalle, Ralf",
-        "27. Juli 2021"
+        "Dienstag, 27. Juli 2021"
     ),
     Session(
         "Kellenhusen",
         "Marcel, Lutz, Carsten",
-        "15. April 2021"
+        "Mittwoch, 15. April 2021"
     )
 )
