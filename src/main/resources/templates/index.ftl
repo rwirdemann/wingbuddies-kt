@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="entries" type="kotlin.collections.List<com.jetbrains.handson.website.Session>" -->
+<#-- @ftlvariable name="entries" type="kotlin.collections.List<de.wingbuddies.Session>" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.jetbrains.handson.website
+package de.wingbuddies
 
 import freemarker.cache.ClassTemplateLoader
 import freemarker.core.HTMLOutputFormat

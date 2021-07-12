@@ -1,4 +1,4 @@
-package com.jetbrains.handson.website
+package de.wingbuddies
 
 data class Session(val spot: String, val surfer: String, val wann: String)
 
